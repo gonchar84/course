@@ -4,7 +4,7 @@
   "description": "An example of git and",
   "main": "app.js",
   "scripts": {
-    "dev": "parcel dev ./src/index.html",
+    "dev": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html"
   },
   "repository": {
@@ -19,8 +19,7 @@
   },
   "homepage": "https://github.com/maslakoff/gittest#readme",
   "dependencies": {
-    "chalk": "^4.1.0",
-    "scss": "^0.2.4"
+    "chalk": "^4.1.0"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
