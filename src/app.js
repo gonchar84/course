@@ -1,60 +1,81 @@
-// const chalk = require('chalk');
-// const log = console.log;
+// массив задач
+const todos = [
+  { name: 'task1', key: 1 },
+  { name: 'task2', key: 2 },
+  { name: 'task3', key: 3 },
+  { name: 'task4', key: 4 },
+  { name: 'task5', key: 5 },
+  { name: 'task6', key: 6 },
+  { name: 'tasks7', key: 7 },
+];
+
+// делаем запрос и вытаскиваем нужный тег
+const parent = document.querySelector("body > div > div:nth-child(4) > ul");
+
+// удаляем весь html в теге
+parent.innerHTML = '';
+
+// цикл - todos
+for(let i=0; i < todos.length; i++) {
+  // помещаем нужный элемент в переменную
+  let todo = todos[i];
+
+  // заполняем html тега
+  parent.innerHTML += `<li data-id="${todo.id}"> 
+                            ${todo.name} 
+                       </li>`;
+}
+
+// ищем тэг по аттр id
+let tag = document.getElementById('js-bar');
+
+// ищем тэги по имени тега
+let tags = document.getElementsByTagName('div');
+
+// ищем тэги по selector запросу
+const tagsWithClassRow = document.querySelectorAll(".row");
 
 
-let firstName = 'Igor';
-let lastName = '   Maslakov   ';
- 
-// charAt(index)
-// const symb = firstName.charAt(0);
-// console.log('Char at 0:', symb);
-// concat
-// const fullName = firstName.concat(' ', lastName);
-// console.log(fullName)
-const fullNamePlus = firstName + ' ' + lastName;
-// console.log('+: ', fullNamePlus);
-const fullNameTemplate = `${firstName} ${lastName}`;
-// console.log('fullNameTemplate: ', fullNameTemplate);
+// ищем тэг по selector запросу
+const span = document.querySelector("span");
 
-const data = [];
-data.push(firstName);
-data.push('maslakoff');
-data.push(lastName);
+// меняем его HTML, todos.length = кол во элементов в массиве
+span.innerHTML = `${todos.length} items left`;
+
+// ищем первый ul в документе
+const result = document.querySelector("body div ul");
+
+// ищем первый ul с классом list в документе
+const result2 = document.querySelector("body div ul.list");
+
+// ищем первый ul с классом list в документе, > означает у детей body
+const result3 = document.querySelector("body > div ul.list");
+
+// ищем первый div с классом limiter в документе, nth-child - порядковый номер ребенка
+const result4 = document.querySelector("body div.limiter div:nth-child(4)");
 
 
-// log(chalk.blue('data:'), data)
 
-const result = data
-.filter(elememt => typeof elememt === 'string')
-.map(item => item.trim())
-.join(' ');
-console.log('Parcel is awesome!')
+const fon = document.getElementById("js-bar");
+fon.style.background = "red";
 
-// const filteredData = data
-// .filter(elememt => typeof elememt === 'string');
 
-// const trimmedData = filteredData.map(item => item.trim());
+const color = document.querySelector("h1");
+color.style.color = "blue"; 
 
-// const finalResult = trimmedData.join(' ');
 
-// console.log(chalk.red('string data:'), result)
-// indexOf
-// includes (es6)
-// replace
-// toUpperCase
-// console.log('Upper:', firstName.toUpperCase());
-// toLowerCase, 
-// console.log('Lower:', lastName.toLowerCase());
-// trim, 
-// console.log('trim:', lastName.trim());
-// split, 
-// const bill = '10$ 20$ 55$';
-// const billsArray = bill.split('$ ');
-// console.log('billsArray: ', billsArray)
-// lastIndexOf, 
-// slice, 
-// substring(start, end), 
-// substr(start, length), 
-// startsWith (es6), 
-// endsWith (es6), 
-// repeat (es6), 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
