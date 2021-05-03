@@ -1,30 +1,3 @@
-// массив задач
-const todos = [
-  { name: 'task1', key: 1 },
-  { name: 'task2', key: 2 },
-  { name: 'task3', key: 3 },
-  { name: 'task4', key: 4 },
-  { name: 'task5', key: 5 },
-  { name: 'task6', key: 6 },
-  { name: 'tasks7', key: 7 },
-];
-
-// делаем запрос и вытаскиваем нужный тег
-const parent = document.querySelector("body > div > div:nth-child(4) > ul");
-
-// удаляем весь html в теге
-parent.innerHTML = '';
-
-// цикл - todos
-for(let i=0; i < todos.length; i++) {
-  // помещаем нужный элемент в переменную
-  let todo = todos[i];
-
-  // заполняем html тега
-  parent.innerHTML += `<li data-id="${todo.id}"> 
-                            ${todo.name} 
-                       </li>`;
-}
 
 // ищем тэг по аттр id
 let tag = document.getElementById('js-bar');
@@ -54,28 +27,29 @@ const result3 = document.querySelector("body > div ul.list");
 // ищем первый div с классом limiter в документе, nth-child - порядковый номер ребенка
 const result4 = document.querySelector("body div.limiter div:nth-child(4)");
 
+// ищем узлы по классу
+const result5 = document.getElementsByClassName("asasas");
 
+if (el.hasChildNodes()) {
+    el.childNodes.forEach(child => el.removeChild(child));
+}
 
-const fon = document.getElementById("js-bar");
-fon.style.background = "red";
+// examples
+const h1 = document.querySelector('body > h1');
 
+if(h1) {
 
-const color = document.querySelector("h1");
-color.style.color = "blue"; 
+    h1.innerText = '1111'
+    h1.nodeName
+    h1.style.backgroundColor = 'red'
+    h1.classList.add('red')
+    h1.getBoundingClientRect().top  + window.scrollY;
+    h1.remove()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    h1.getAttribute('')
+    h1.setAttribute('1',1212)
+   // listItem.parentNode.replaceChild(newItem, listItem);
+}
 
 
 
